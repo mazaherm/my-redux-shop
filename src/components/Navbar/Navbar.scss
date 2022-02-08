@@ -1,0 +1,15 @@
+$module: 'Navbar';
+
+.#{$module} {
+  background-color: #273c75;
+  padding: 1rem;
+  
+  &__Link {
+    color: #f5f6fa;
+    text-decoration: none;
+    padding: 1rem;
+  }
+  &__Link:hover {
+    background-color: #7f8fa6;
+  }
+}
