@@ -1,0 +1,24 @@
+$module: 'ErrorMessage';
+
+.#{$module} {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #353b48;
+  border-radius: 6px;
+  width: 60%;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin: 200px auto;
+
+  &__Icon {
+     color: #fbc531;
+  }
+
+  &__Text {
+    color: #353b48;
+    font-size: 18px;
+    padding: 15px;
+  }
+}

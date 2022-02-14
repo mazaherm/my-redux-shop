@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import { fetchProducts } from '../actions/productsActions';
 
 import ProductCard from '../components/ProductCard';
+import ErorrMessage from '../components/ErorrMessage';
+import Loading from '../components/Loading';
 
 import './ProductsPage.scss';
 
@@ -18,21 +20,38 @@ const ProductsPage = ({
     dispatch(fetchProducts())
   }, [dispatch]);
 
-  console.log('products', products.data);
+  const renderProducts = () => {
+    return (
+      products.map(product => (
+        <ProductCard
+          id={product.id}
+          title={product.title}
+          image={product.image}
+          price={product.price}
+          stockCount={product.rating.count}
+        />
+      ))
+    )
+  }
+
+  const renderProductsPage = () => {
+    switch(true) {
+      case loading:
+        return <Loading />;
+      case hasErrors:
+        return <ErorrMessage />;
+      default:
+        return (
+          <div className='ProductsPage__Container'>
+            {renderProducts()}
+          </div>
+        );
+    }
+  }
 
   return (
     <section className='ProductsPage'>
-      <div className='ProductsPage__Container'>
-        {products.data.map(product => (
-          <ProductCard
-            id={product.id}
-            title={product.title}
-            image={product.image}
-            price={product.price}
-            stockCount={product.rating.count}
-          />
-        ))}
-      </div>
+      {renderProductsPage()}
     </section>
   );
 };
