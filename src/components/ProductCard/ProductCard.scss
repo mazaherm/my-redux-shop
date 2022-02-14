@@ -1,0 +1,36 @@
+$module: 'ProductCard';
+
+.#{$module} {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  height: 400px;
+  width: 300px;
+  padding: 15px;
+
+  &__Title {
+    color: #353b48;
+    font-size: 20px;
+    text-transform: capitalize;
+    padding-bottom: 15px;
+  }
+  &__Image {
+    height: 250px;
+    width: 200px;
+    object-fit: contain;
+    margin: auto;
+  }
+  &__Details {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  &__StockCount {
+  }
+  &__OutOfStock {
+    color: #e84118;
+  }
+  &__InStock {
+    color: #44bd32;
+  }
+}

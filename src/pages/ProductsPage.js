@@ -3,6 +3,10 @@ import { connect } from 'react-redux';
 
 import { fetchProducts } from '../actions/productsActions';
 
+import ProductCard from '../components/ProductCard';
+
+import './ProductsPage.scss';
+
 const ProductsPage = ({
   dispatch,
   loading,
@@ -14,9 +18,21 @@ const ProductsPage = ({
     dispatch(fetchProducts())
   }, [dispatch]);
 
+  console.log('products', products.data);
+
   return (
-    <section>
-      <h1>Products Page</h1>
+    <section className='ProductsPage'>
+      <div className='ProductsPage__Container'>
+        {products.data.map(product => (
+          <ProductCard
+            id={product.id}
+            title={product.title}
+            image={product.image}
+            price={product.price}
+            stockCount={product.rating.count}
+          />
+        ))}
+      </div>
     </section>
   );
 };

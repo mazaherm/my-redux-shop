@@ -1,0 +1,13 @@
+$module: 'ProductsPage';
+
+.#{$module} {
+  &__Container {
+    display: flex;
+    flex-flow: row wrap;
+    width: 70%;
+  }
+
+  &__Container > div {
+    margin: 10px;
+  }
+}
