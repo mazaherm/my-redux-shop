@@ -1,0 +1,49 @@
+$module: 'SelectedProductCard';
+
+.#{$module} {
+  display: flex;
+  padding: 50px;
+
+  &__ProductDetails {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+
+  &__Title {
+    font-size: 24px;
+    color: #353b48;
+    margin-bottom: 20px;
+  }
+
+  &__Category {
+    font-size: 15px;
+    color: #353b48;
+    background-color: #dcdde1;
+    padding: 5px 10px;
+    border-radius: 15px;
+    margin: 0 10px;
+  }
+
+  &__Image {
+    height: 600px;
+    width: 500px;
+    object-fit: contain;
+  }
+
+  &___ProductDescTitle {
+    font-size: 24px;
+    color: #353b48;
+    margin-bottom: 20px;
+  }
+
+  &__ProductDescDetail {
+    font-size: 18px;
+    color: #353b48;
+  }
+
+  &__Price {
+    font-size: 24px;
+    color: #353b48;
+  }
+}

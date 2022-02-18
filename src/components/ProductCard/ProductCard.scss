@@ -8,6 +8,12 @@ $module: 'ProductCard';
   height: 400px;
   width: 300px;
   padding: 15px;
+  margin: 10px;
+
+  &__Link {
+    text-decoration: none;
+    color: #353b48;
+  }
 
   &__Title {
     color: #353b48;

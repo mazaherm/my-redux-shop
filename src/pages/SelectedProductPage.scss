@@ -1,0 +1,7 @@
+$module: 'ProductsPage';
+
+.#{$module} {
+  &__Container {
+    display: flex;
+  }
+}

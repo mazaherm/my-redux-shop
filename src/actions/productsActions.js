@@ -31,8 +31,9 @@ export function fetchProducts() {
         .then((products) => products.data)
 
       dispatch(getProductsSuccess(response))
-    } catch (erorr) {
+    } catch (error) {
       dispatch(getProductsFailure())
+      console.error('ERROR: ', error);
     } 
   }
 }
