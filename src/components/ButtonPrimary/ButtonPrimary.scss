@@ -1,0 +1,12 @@
+$module: 'ButtonPrimary';
+
+.#{$module} {
+  color: #222f3e;
+  background-color: #4cd137;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  &:hover {
+    background-color: #44bd32;
+  }
+}

@@ -1,12 +1,17 @@
+// Libraries
 import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
+import { useDispatch, connect } from 'react-redux';
 
+// Actions
 import { fetchSelectedProduct } from '../actions/selectedProductActions';
+import { addToBasket } from '../actions/basketActions';
 
+// Components
 import SelectedProductCard from '../components/SelectedProductCard';
 import ErrorMessage from '../components/ErorrMessage';
 import Loading from '../components/Loading';
 
+// Styles
 import './SelectedProductPage.scss';
 
 const SelectedProductPage = ({
@@ -15,11 +20,14 @@ const SelectedProductPage = ({
   loading,
   hasErrors,
   product,
+  addToBasket,
 }) => {
 
+  const getProductDispatch = useDispatch()
+
   useEffect(() => {
-    dispatch(fetchSelectedProduct(match.params.id))
-  }, [dispatch, match.params.id])
+  getProductDispatch(fetchSelectedProduct(match.params.id))
+  }, [getProductDispatch, match.params.id])
 
   const renderSelectedProduct = () => {
     return (
@@ -30,6 +38,7 @@ const SelectedProductPage = ({
         image={product.image}
         price={product.price}
         title={product.title}
+        onAddToBasket={() => addToBasket(product)}
       />
     )
   }
@@ -58,4 +67,8 @@ const mapStateToProps = (state) => ({
   product: state.product.product,
 })
 
-export default connect(mapStateToProps)(SelectedProductPage);
+const mapDispatchToProps = (dispatch) => ({
+  addToBasket: (product) => dispatch(addToBasket(product)),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(SelectedProductPage);

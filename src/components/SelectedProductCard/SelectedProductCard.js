@@ -1,8 +1,8 @@
 import React from 'react';
 
-import './SelectedProductCard.scss';
+import ButtonPrimary from '../ButtonPrimary';
 
-// import Button here - this will be an add to basket which will take in a function. the function will be handled in the SelectedProductPage
+import './SelectedProductCard.scss';
 
 const SelectedProductCard = ({
   id,
@@ -11,6 +11,7 @@ const SelectedProductCard = ({
   image,
   price,
   title,
+  onAddToBasket
 }) => {
   return (
     <div className='SelectedProductCard' key={id}>
@@ -25,7 +26,10 @@ const SelectedProductCard = ({
       <div className='SelectedProductCard__Info'>
         <div className='SelectedProductCard__Price'>{new Intl.NumberFormat('en-US', { style: 'currency', currency: 'GBP' }).format(price)}</div>
         <div className='SelectedProductCard__Button'>
-          <button>Add to basket</button>
+          <ButtonPrimary
+            onClick={onAddToBasket}
+            buttonText='Add to basket'
+          />
         </div>
       </div>
     </div>

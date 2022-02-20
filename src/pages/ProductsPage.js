@@ -24,6 +24,7 @@ const ProductsPage = ({
     return (
       products.map(product => (
         <ProductCard
+          key={product.id}
           id={product.id}
           title={product.title}
           image={product.image}

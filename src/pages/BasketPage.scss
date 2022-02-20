@@ -1,0 +1,50 @@
+$module: 'BasketPage';
+
+.#{$module} {
+
+  &__PageTitle {
+    margin: 50px auto;
+    text-align: center;
+  }
+  &__Empty {
+    text-align: center;
+  }
+
+  &__BasketItem {
+    display: flex;
+    width: 60%;
+    margin: auto;
+    border: 1px solid #dfe4ea;
+  }
+
+  &__Image {
+    height: 250px;
+    width: 200px;
+    object-fit: contain;
+    margin: auto;
+    padding: 20px;
+  }
+
+  &__Details {
+    border-right: 1px solid #dfe4ea;
+    border-left: 1px solid #dfe4ea;
+    padding: 20px;
+  }
+
+  &__Title {
+    color: #353b48;
+    font-size: 20px;
+    text-transform: capitalize;
+    margin-bottom: 15px;
+  }
+
+  &__PriceDetails {
+    padding: 20px;
+  }
+
+  &__Price {
+    font-size: 24px;
+    color: #353b48;
+    margin-bottom: 10px;
+  }
+}
