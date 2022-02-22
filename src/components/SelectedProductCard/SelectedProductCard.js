@@ -11,7 +11,7 @@ const SelectedProductCard = ({
   image,
   price,
   title,
-  onAddToBasket
+  onAddToBasket,
 }) => {
   return (
     <div className='SelectedProductCard' key={id}>
@@ -29,6 +29,7 @@ const SelectedProductCard = ({
           <ButtonPrimary
             onClick={onAddToBasket}
             buttonText='Add to basket'
+            add
           />
         </div>
       </div>

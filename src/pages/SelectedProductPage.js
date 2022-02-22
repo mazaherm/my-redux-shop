@@ -15,7 +15,6 @@ import Loading from '../components/Loading';
 import './SelectedProductPage.scss';
 
 const SelectedProductPage = ({
-  dispatch,
   match,
   loading,
   hasErrors,

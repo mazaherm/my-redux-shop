@@ -2,7 +2,6 @@ import * as actions from '../actions/basketActions';
 
 export const initialState = {
   basket: [],
-  loading: true,
 }
 
 export default function basketReducer (state = initialState, action) {
@@ -12,8 +11,12 @@ export default function basketReducer (state = initialState, action) {
       basket.push(action.payload)
       return {
         ...state,
-        loading: false,
         basket: basket,
+      };
+    case actions.REMOVE_FROM_BASKET:
+      return {
+        ...state,
+        basket: basket.filter((item) => item.product.id !== action.payload.product),
       };
     default:
       return state;

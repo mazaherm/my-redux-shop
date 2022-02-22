@@ -52,6 +52,7 @@ const ProductsPage = ({
 
   return (
     <section className='ProductsPage'>
+      <h1 className='ProductsPage__Title'>Welcome to my shop</h1>
       {renderProductsPage()}
     </section>
   );

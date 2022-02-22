@@ -1,12 +1,28 @@
 $module: 'ButtonPrimary';
 
-.#{$module} {
-  color: #222f3e;
-  background-color: #4cd137;
+@mixin defaultStyles {
   padding: 10px 15px;
   border-radius: 6px;
+  margin: 10px 0;
   cursor: pointer;
-  &:hover {
-    background-color: #44bd32;
+}
+
+.#{$module} {
+  &__Add {
+    @include defaultStyles;
+    color: #222f3e;
+    background-color: #4cd137;
+    &:hover {
+      background-color: #44bd32;
+    }
+  }
+
+  &__Remove {
+    @include defaultStyles;
+    color: #ffffff;
+    background-color: #e84118;
+    &:hover {
+      background-color: #c23616;
+    }
   }
 }
